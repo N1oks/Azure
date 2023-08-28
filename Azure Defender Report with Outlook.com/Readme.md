@@ -81,7 +81,7 @@ In the next run (weekly) it will not display the subscriptions you added to the 
 
 You can deploy the main template by clicking on the buttons below:
 
-<a href="https://github.com/N1oks/Azure/blob/main/Azure%20Defender%20Report%20with%20Outlook.com/REPORT_Defender_OUTLOOK.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FN1oks%2FAzure%2Fmain%2FAzure%20Defender%20Report%20with%20Outlook.com%2FREPORT_Defender_OUTLOOK.json" target="_blank">
     <img src="https://aka.ms/deploytoazurebutton"/>
 </a> 
 
