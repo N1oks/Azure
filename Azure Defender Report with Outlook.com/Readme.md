@@ -1,10 +1,10 @@
 # Identifying Subscriptions that are not Managed by Microsoft Defender for Cloud and send email with Outlook.com
-**Author of the original code: Safeena Begum**
+**Author of the original code: Safeena Begum**  
 **Author of the change code: Edson Matias Fagundes Junior**
 
 This is a script originaly created by Safeena Begum, and customized and upgraded by me for learning propose and without any financial interest, you can use this free code to if you need withou any financial interested. 
 
-The proposal of this code is fix some of the issues that i face during the deployment of the original report that you can find on this link https://github.com/Azure/Microsoft-Defender-for-Cloud/tree/main/Workflow%20automation/SubscriptionManagement.
+The proposal of this code is fix some of the issues that i face during the deployment of the original report that you can find on this [link](https://github.com/Azure/Microsoft-Defender-for-Cloud/tree/main/Workflow%20automation/SubscriptionManagement).
 
 ## Those are the issues, that I tried to fix for my needs:
     Not working  if you don't have O365
