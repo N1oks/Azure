@@ -18,7 +18,7 @@ a. Create User Assigned Managed Identity. Follow the instructions listed in the 
 
 b. Once User-assgined managed identity is created, make sure to provide Reader Permissions to the Root Management Group
     b.1 On this step I had some issues that by default you dont have that permission and you need to elevate your permission to add the Managed identity permisson on Management group Root Level, remeber its important to be on Root Level. [Elevate Access Global Admin] https://learn.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin
-    b.2 In my case for test propose I create one account that I use to authorize the ARM late on, and for that account I use the   Azure role assignments to assing the Logic App Operator role to this users.
+    b.2 In my case for test propose, I create one account that I used to authorize the ARM api and for that account I use the   Azure role assignments to assing the Logic App Operator that is needed.
     ![Alt text](image.png) 
 
 c. Enable and add the above created User assigned Identity to the Logic App. Follow the instructions [here](https://docs.microsoft.com/en-us/azure/logic-apps/create-managed-service-identity#create-user-assigned-identity-in-the-azure-portal) to assign the User assigned identity to the Logic App. 
