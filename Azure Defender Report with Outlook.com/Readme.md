@@ -49,7 +49,8 @@ This is how the deployment screen looks like.
         - Select the Outlook API connection and press 'Edit API connection'.  
         - Press the 'Authorize' button.  
         - Make sure to authenticate against the poperly Outlook.com account.  
-        - Press 'Save'.  
+        - Press 'Save'. 
+
 **G.** Make sure to authorize the ARM API connection  
     This API connection is used to Manage the resources. To authorize the API connection:  
         - Go to the Resource Group you have used to deploy the template resources.  
@@ -60,11 +61,11 @@ This is how the deployment screen looks like.
     In my case I created one account that I use to authorize the ARM api and for that account need to assing the Logic App Operator role.
     ![Alt text](image.png) 
 
-**H.** Make sure to authorize the AzureTables API connection
-    This API connection is used to connect with storage Account. To authorize the API connection:
-        - Go to the Resource Group you have used to deploy the template resources.
-        - Select the AzureTables API connection and press 'Edit API connection'.
-        - Insert the Storage Account Name and Key.
+**H.** Make sure to authorize the AzureTables API connection  
+    This API connection is used to connect with storage Account. To authorize the API connection:  
+        - Go to the Resource Group you have used to deploy the template resources.  
+        - Select the AzureTables API connection and press 'Edit API connection'.  
+        - Insert the Storage Account Name and Key.  
         - Press 'Save'.
 
 ## How it works: 
