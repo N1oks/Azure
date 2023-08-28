@@ -16,23 +16,25 @@ A. Create a resource group
 
 B. Create User Assigned Managed Identity. Follow the instructions listed in the doc to [create user-assigned managed identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal#create-a-user-assigned-managed-identity). 
 
-*Copy the Resource ID you will need for the deploymente. 
+**Copy the Resource ID you will need for the deployment**
 
-C On this step I had some issues that by default you dont have that permission and you need to elevate your permission to add the Managed identity permisson on Management group Root Level, remeber its important to be on Root Level. [Elevate Access Global Admin](https://learn.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin)
+C: On this step I had some issues that by default you dont have that permission and you need to elevate your permission to add the Managed identity permisson on Management group Root Level, remeber its important to be on Root Level. [Elevate Access Global Admin](https://learn.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin)
 
-    C.1 Once User-assgined managed identity is created, make sure to provide Reader Permissions to the Root Management Group. 
+C.1 Once User-assgined managed identity is created, make sure to provide Reader Permissions to the Root Management Group. 
    ![Alt text](image-4.png)
    ![Alt text](image-6.png) 
    Select "Reader" click on next.
    On the next screen click on Managed Identiy and Select the memners.
    ![Alt text](image-7.png)
-   After that Click on  Review + assing.
+
+After that Click on  **Review + assing**.
    
 D. Now you can deploy :D
+
 This is how the deployment screen looks like. 
 ![Alt text](image-1.png)
 
-Afte the deploy do the folowing steps before you run the script. 
+Afte the deploy do the followign steps, before test the Power app flow.
 
 E. Enable and add the above created User assigned Identity to the Logic App. Follow the instructions [here](https://docs.microsoft.com/en-us/azure/logic-apps/create-managed-service-identity#create-user-assigned-identity-in-the-azure-portal) to assign the User assigned identity to the Logic App. 
 
