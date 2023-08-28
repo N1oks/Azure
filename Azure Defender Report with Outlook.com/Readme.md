@@ -72,6 +72,7 @@ This is how the deployment screen looks like.
 By default this automation runs weekly and queries the Root Management group to identify any new subscription(s) that are directly assigned to the root management group. 
 If one or more subscriptions are found in the Management group tree, the Logic App will send an email with the following details: Subscription Name, Subscription ID, Action, Status of the subscription (If MDC is enabled or disabled). Below has an example of how this email look like:
 ![Alt text](image-8.png)  
+
 If you just add one new subscription and run try to run the logic app porbably will fail as it needs Resource provider status registered for Microsoft.security. [Here](https://learn.microsoft.com/en-us/answers/questions/1251839/how-to-register-subscription-to-microsoft-security)
 The automation artifact also creates a Storage account with a table storage in it during the deployment of the template. If the intent of assigning the subscription to the management group was on purpose, you could exclude the subscription from being displayed in the email on next run by just clicking on the hyperlink ‘Exclude <subscriptionname>’ under the Action column of Image 1. 
 In the next run (weekly) it will not display the subscriptions you added to the Exclusion list (table storage) and notifies only newly added subscription(s) via email. 
