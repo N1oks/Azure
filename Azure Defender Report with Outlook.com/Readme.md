@@ -14,10 +14,10 @@ The proposal of this code is fix some of the issues that i face during the deplo
 
 a. Create a resource group
 
-a. Create User Assigned Managed Identity. Follow the instructions listed in the doc to [create user-assigned managed identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal#create-a-user-assigned-managed-identity)
+a1. Create User Assigned Managed Identity. Follow the instructions listed in the doc to [create user-assigned managed identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal#create-a-user-assigned-managed-identity)
 
 b. Once User-assgined managed identity is created, make sure to provide Reader Permissions to the Root Management Group
-    b.1 On this step I had some issues that by default you dont have that permission and you need to elevate your permission to add the Managed identity permisson on Management group Root Level, remeber its important to be on Root Level. [Elevate Access Global Admin] https://learn.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin
+    b.1 On this step I had some issues that by default you dont have that permission and you need to elevate your permission to add the Managed identity permisson on Management group Root Level, remeber its important to be on Root Level. [Elevate Access Global Admin] (https://learn.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin)
     b.2 In my case for test propose, I create one account that I used to authorize the ARM api and for that account I use the   Azure role assignments to assing the Logic App Operator that is needed.
     ![Alt text](image.png) 
 
