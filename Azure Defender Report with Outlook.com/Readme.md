@@ -7,22 +7,46 @@ This is a script originaly created by Safeena Begum, and customized and upgraded
 The proposal of this code is fix some of the issues that i face during the deployment of the original report that you can find on this link https://github.com/Azure/Microsoft-Defender-for-Cloud/tree/main/Workflow%20automation/SubscriptionManagement.
 
 ## Those are the issues, that I tried to fix for my needs:
-    Not working  if you dont have O365 services enable
-    Not working for Childrens of Management group just root.
+    Not working  if you don't have O365 services enable
+    Not working for childrens subscription of childrens Management group.
 
 ## Prerequisites:
 
-a. Create a resource group
+A. Create a resource group 
 
-a1. Create User Assigned Managed Identity. Follow the instructions listed in the doc to [create user-assigned managed identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal#create-a-user-assigned-managed-identity)
+B. Create User Assigned Managed Identity. Follow the instructions listed in the doc to [create user-assigned managed identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal#create-a-user-assigned-managed-identity). 
 
-b. Once User-assgined managed identity is created, make sure to provide Reader Permissions to the Root Management Group
-    b.1 On this step I had some issues that by default you dont have that permission and you need to elevate your permission to add the Managed identity permisson on Management group Root Level, remeber its important to be on Root Level. [Elevate Access Global Admin] (https://learn.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin)
-    b.2 In my case for test propose, I create one account that I used to authorize the ARM api and for that account I use the   Azure role assignments to assing the Logic App Operator that is needed.
+*Copy the Resource ID you will need for the deploymente. 
+
+C On this step I had some issues that by default you dont have that permission and you need to elevate your permission to add the Managed identity permisson on Management group Root Level, remeber its important to be on Root Level. [Elevate Access Global Admin](https://learn.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin)
+
+    C.1 Once User-assgined managed identity is created, make sure to provide Reader Permissions to the Root Management Group. 
+   ![Alt text](image-4.png)
+   ![Alt text](image-6.png) 
+   Select "Reader" click on next.
+   On the next screen click on Managed Identiy and Select the memners.
+   ![Alt text](image-7.png)
+   After that Click on  Review + assing.
+   
+D. Now you can deploy :D
+This is how the deployment screen looks like. 
+![Alt text](image-1.png)
+
+Afte the deploy do the folowing steps before you run the script. 
+
+E. Enable and add the above created User assigned Identity to the Logic App. Follow the instructions [here](https://docs.microsoft.com/en-us/azure/logic-apps/create-managed-service-identity#create-user-assigned-identity-in-the-azure-portal) to assign the User assigned identity to the Logic App. 
+
+F. Make sure to authorize the Ouitlook API connection
+    This API connection is used to send emails. To authorize the API connection:
+        - Go to the Resource Group you have used to deploy the template resources.
+        - Select the Office365 API connection and press 'Edit API connection'.
+        - Press the 'Authorize' button.
+        - Make sure to authenticate against Azure AD.
+        - Press 'Save'.
+  
+
+E.   C.2 In my case for test propose, I create one account that I used to authorize the ARM api and for that account I use the   Azure role assignments to assing the Logic App Operator that is needed.
     ![Alt text](image.png) 
-
-c. Enable and add the above created User assigned Identity to the Logic App. Follow the instructions [here](https://docs.microsoft.com/en-us/azure/logic-apps/create-managed-service-identity#create-user-assigned-identity-in-the-azure-portal) to assign the User assigned identity to the Logic App. 
-
 ## How it works: 
 By default this automation runs weekly and queries the Root Management group to identify any new subscription(s) that are directly assigned to the root management group. 
 If one or more subscriptions are found in the Root management group, the Logic App will send an email with the following details: Subscription Name, Subscription ID, Action, Status of the subscription (If MDC is enabled or disabled). Image 1 has an example of how this email look like:
