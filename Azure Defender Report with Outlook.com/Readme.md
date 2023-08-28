@@ -19,16 +19,17 @@ The proposal of this code is fix some of the issues that i face during the deplo
 **A.** Create a resource group 
 
 **B.** Create User Assigned Managed Identity. Follow the instructions listed in the doc to [create user-assigned managed identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal#create-a-user-assigned-managed-identity). 
-    **Copy the Resource ID you will need for the deployment**
+    **Copy the Resource ID as you will need it for the deployment**
 
 **C.** On this step I had some issues that by default you dont have that permission and you need to elevate your permission to add the Managed identity permisson on Management group Root Level, remeber its important to be on Root Level. [Elevate Access Global Admin](https://learn.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin)
 
-**C.1.** Once user-assgined managed identity is created, make sure to provide Reader Permissions to the Root Management Group, folowing the below steps.
+**C.1.** Once user-assgined managed identity is created, make sure to provide Reader Permissions to the Root Management Group, folowing the below steps.  
 ![Alt text](image-4.png)
 ![Alt text](image-6.png)  
 
 Select **"Reader"** click on **next**.  
-On the next screen click on **Managed Identiy** and **Select the members**.
+On the next screen click on **Managed Identiy** and **Select the members**.  
+
 ![Alt text](image-7.png)
 
 After that Click on  **Review + assing**.
@@ -42,19 +43,19 @@ This is how the deployment screen looks like.
 
 **E.** Enable and add the above created User assigned Identity to the Logic App (Remember to assing on the 2 Logic apps.).  Follow the instructions [here](https://docs.microsoft.com/en-us/azure/logic-apps/create-managed-service-identity#create-user-assigned-identity-in-the-azure-portal) to assign the User assigned identity to the Logic App. 
 
-**F.** Make sure to authorize the Outlook API connection
-    This API connection is used to send emails. To authorize the API connection:
-        - Go to the Resource Group you have used to deploy the template resources.
-        - Select the Outlook API connection and press 'Edit API connection'.
-        - Press the 'Authorize' button.
-        - Make sure to authenticate against the poperly Outlook.com account.
-        - Press 'Save'.
-**G.** Make sure to authorize the ARM API connection
-    This API connection is used to Manage the resources. To authorize the API connection:
-        - Go to the Resource Group you have used to deploy the template resources.
-        - Select the ARM API connection and press 'Edit API connection'.
-        - Press the 'Authorize' button.
-        - Make sure to authenticate against the poperly account.
+**F.** Make sure to authorize the Outlook API connection  
+    This API connection is used to send emails. To authorize the API connection:  
+        - Go to the Resource Group you have used to deploy the template resources.  
+        - Select the Outlook API connection and press 'Edit API connection'.  
+        - Press the 'Authorize' button.  
+        - Make sure to authenticate against the poperly Outlook.com account.  
+        - Press 'Save'.  
+**G.** Make sure to authorize the ARM API connection  
+    This API connection is used to Manage the resources. To authorize the API connection:  
+        - Go to the Resource Group you have used to deploy the template resources.  
+        - Select the ARM API connection and press 'Edit API connection'.  
+        - Press the 'Authorize' button.  
+        - Make sure to authenticate against the poperly account.  
         - Press 'Save'.  
     In my case I created one account that I use to authorize the ARM api and for that account need to assing the Logic App Operator role.
     ![Alt text](image.png) 
