@@ -1,4 +1,4 @@
-# Identifying Subscriptions that are not Managed by Microsoft Defender for Cloud
+# Identifying Subscriptions that are not Managed by Microsoft Defender for Cloud and send email with Outlook.com
 **Author of the original code: Safeena Begum**
 **Author of the change code: Edson Matias Fagundes Junior**
 
