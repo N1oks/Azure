@@ -23,7 +23,7 @@ C: On this step I had some issues that by default you dont have that permission 
 C.1 Once User-assgined managed identity is created, make sure to provide Reader Permissions to the Root Management Group. 
    ![Alt text](image-4.png)
    ![Alt text](image-6.png)
-   Select **"Reader"** click on **next**.
+Select **"Reader"** click on **next**.
    On the next screen click on **Managed Identiy** and **Select the members**.
    ![Alt text](image-7.png)
 
