@@ -3,7 +3,7 @@
 #########################################################################
 # This content is licensed over the Creative Commons                    #
 # https://creativecommons.org/publicdomain/zero/1.0/?ref=chooser-v1     #
-# This script were created by Edson Fagundes                            #
+# This script were created by Edson Matias Fagundes Junior              #
 # using Hari Krishna - Partial code :D                                  #
 #########################################################################
 
